@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Running Out Of Space</title>
+  <link rel="stylesheet" href="ROOS_styles.css">
+</head>
+<body>
+  
+  <div class="containerT" id="anims" style="opacity: 0;"">
+    <div class="tracks">
+      <span style="--i:3"><img src="https://img.icons8.com/fluency/100/000000/satellite-sending-signal.png" /></span>
+    </div>
+    <div class="tracks">
+      <span style="--i:8"><img src="https://img.icons8.com/office/100/000000/satellite-sending-signal.png" /></span>
+    </div>
+    <div class="tracks">
+      <span style="--i:5"><img src="https://img.icons8.com/color/100/000000/death-star.png" /></span>
+    </div>
+    <div class="tracks">
+      <span style="--i:20"><img src="https://img.icons8.com/fluency/100/000000/satellite-sending-signal.png" /></span>
+    </div>
+    <div class="tracks">
+      <span style="--i:12"><img src="https://img.icons8.com/office/100/000000/satellite-sending-signal.png" /></span>
+    </div>
+    <div class="tracks">
+      <span style="--i:11"><img src="https://img.icons8.com/color/100/000000/death-star.png" /></span>
+    </div>
+  </div>
+
+  <table id="tab">
+    <thead style="display:none">
+      <tr>
+        <th>258663.13</th>
+        <th>263013.13</th>
+        <th>253013.13</th>
+        <th>257863.13</th>
+        <th>262063.13</th>
+        <th>262263.13</th>
+        <th>262363.13</th>
+      </tr>
+    </thead>
+    <tbody style="display:none">
+      <tr>
+        <td>259363.13</td>
+        <td>228213.13</td>
+        <td>224513.13</td>
+        <td>229363.13</td>
+        <td>223813.13</td>
+        <td>302963.13</td>
+        <td>257713.13</td>
+      </tr>
+      <tr>
+        <td>486163.13</td>
+        <td>552713.13</td>
+        <td>577113.13</td>
+        <td>846563.13</td>
+        <td>912213.13</td>
+        <td>927713.13</td>
+        <td>476563.13</td>
+      </tr>
+      <tr>
+        <td>972363.13</td>
+        <td>1102213.13</td>
+        <td>1060463.13</td>
+        <td>1217963.13</td>
+        <td>1255013.13</td>
+        <td>1237113.13</td>
+        <td>978413.13</td>
+      </tr>
+      <tr>
+        <td>738113.13</td>
+        <td>897863.13</td>
+        <td>830763.13</td>
+        <td>654263.13</td>
+        <td>652963.13</td>
+        <td>789063.13</td>
+        <td>744363.13</td>
+      </tr>
+      <tr>
+        <td>312663.13</td>
+        <td>328463.13</td>
+        <td>346013.13</td>
+        <td>294513.13</td>
+        <td>305463.13</td>
+        <td>320213.13</td>
+        <td>310563.13</td>
+      </tr>
+      <tr>
+        <td>372613.13</td>
+        <td>372713.13</td>
+        <td>374863.13</td>
+        <td>373463.13</td>
+        <td>371163.13</td>
+        <td>366913.13</td>
+        <td>367663.13</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div id="choice" style="position:relative; top: -675px;">
+    <center>
+    <button onclick="getLocation()">Use Geolocation</button>
+    <br>
+    <p3>OR</p3>
+    <br>
+    <br>
+    <form id="form2">
+      <input type="number" id="lat" placeholder="Latitude (-90 to 90)" min="-90" max="90">
+      <input type="number" id="long" placeholder="Longitude (-180 to 180)" min="-180" max="180">
+    </form>
+    <button onclick="Manual()">Submit Manually</button>
+  </center>
+  </div>
+
+  <div class="container">
+    <center>
+      <p>Above you right now, there exists</p>
+      <p2 id="python" class="python-output-here">---,--- kg</p2>
+      <p>of man-made objects in space</p>
+    </center>
+  </div>
+  
+  <div id="bottom">
+    <p3>
+      Caviats:
+      <br>
+      Assuming a 45 degree field of view from the Zenith, observing from sea level
+      <br>
+      Satellites, debris, and rocket bodies as catalogued by <a href="https://www.space-track.org">space-track.org</a>
+      <br>
+      Small (cm-scale) junk as estimated by the European Space Agency
+      <br>
+      Object masses predicted from...
+    </p3>
+  </div>
+  
+// WHEN UPDATE THE PYTHON FILE, need to update the table above to the data from results.csv and also update the lat =, long = lines in both functions below to match intervals
+
+  <script>
+    var x = document.getElementById("python");
+    var y = document.getElementById("form2");
+
+    function addFadeIn(el, speed) {
+        var seconds = speed / 1000;
+        el.style.transition = "opacity " + seconds + "s ease";
+        el.style.opacity = 100;
+        setTimeout(function () {
+          el.parentNode.appendChild(el);
+        }, speed);
+      }
+
+    function removeFadeOut(el, speed) {
+        var seconds = speed / 1000;
+        el.style.transition = "opacity " + seconds + "s ease";
+
+        el.style.opacity = 0;
+        setTimeout(function () {
+          el.parentNode.removeChild(el);
+        }, speed);
+      }
+
+    function Manual() {
+      // lat = [-90, -80, -70, -60, -50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90];
+      // long = [-90, -80, -70, -60, -50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90];
+      lat = [-90, -60, -30, 0, 30, 60, 90];
+      long = [-180, -120, -60, 0, 60, 120, 180];
+      user_lat = document.getElementById("lat").value;
+      user_long = document.getElementById("long").value;
+      lat_sel = closest(user_lat, lat);
+      long_sel = closest(user_long, long);
+      let rowIndex = lat.indexOf(lat_sel);
+      let cellIndex = long.indexOf(long_sel);
+      var mass = document.getElementById('tab').rows[cellIndex].cells[rowIndex].innerHTML;
+      x.innerHTML = parseFloat(parseFloat(mass).toFixed()).toLocaleString('en-GB') + " kg"
+      removeFadeOut(document.getElementById('choice'), 2000);
+      addFadeIn(document.getElementById('anims'), 10000);
+    }
+      
+    function Automatic(user_lat, user_long) {
+      lat = [-90, -60, -30, 0, 30, 60, 90];
+      long = [-180, -120, -60, 0, 60, 120, 180];
+      lat_sel = closest(user_lat, lat);
+      long_sel = closest(user_long, long);
+      let rowIndex = lat.indexOf(lat_sel);
+      let cellIndex = long.indexOf(long_sel);
+      var mass = document.getElementById('tab').rows[cellIndex].cells[rowIndex].innerHTML;
+      x.innerHTML = parseFloat(parseFloat(mass).toFixed()).toLocaleString('en-GB') + " kg"
+      removeFadeOut(document.getElementById('choice'), 2000);
+      addFadeIn(document.getElementById('anims'), 10000);
+    }
+
+    function closest(num, arr) {
+      var curr = arr[0];
+      var diff = Math.abs(num - curr);
+      for (var val = 0; val < arr.length; val++) {
+        var newdiff = Math.abs(num - arr[val]);
+        if (newdiff < diff) {
+          diff = newdiff;
+          curr = arr[val];
+        }
+      }
+      return curr;
+    }
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showPosition(position) {
+      Automatic(position.coords.latitude, position.coords.longitude);
+    }
+
+    function showError(error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          x.innerHTML = "User denied the request for Geolocation."
+          break;
+        case error.POSITION_UNAVAILABLE:
+          x.innerHTML = "Location information is unavailable."
+          break;
+        case error.TIMEOUT:
+          x.innerHTML = "The request to get user location timed out."
+          break;
+        case error.UNKNOWN_ERROR:
+          x.innerHTML = "An unknown error occurred."
+          break;
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>
