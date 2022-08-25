@@ -9,6 +9,10 @@ body {
   background: black;
 }
 
+.dataframe {
+  display: none;
+}
+
 .containerT {
   position: relative;
   width: 100%;

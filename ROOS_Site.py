@@ -1,3 +1,4 @@
+from distutils.util import strtobool
 import pandas as pd, numpy as np
 import plotly.express as px
 
@@ -13,7 +14,8 @@ date_list = [date.year, date.month, date.day]
 ts = load.timescale()
 
 def GetTLEs():
-    cat = pd.read_csv(r"C:\Users\jackl\Documents\Python\GitFiles\FullSatCat.csv")
+    # cat = pd.read_csv(r"C:\Users\jackl\Documents\Python\GitFiles\FullSatCat.csv")
+    cat = pd.read_csv("ROOS/FullSatCat.csv")
 
     # Goes through all duplicate rows in a catalog by NORAD_CAT_ID and gets the one with the closest epoch
     all = []
@@ -23,6 +25,7 @@ def GetTLEs():
 
     return all
 
+# @profile
 def ProcessImage(timestamp, catalog, bluffton):
     # Gets events of each satellite for this image
     satellites_in_image = []
@@ -76,28 +79,78 @@ def Main():
 
     ttt=time.time()
     results = []
-    lat = np.linspace(-90, 90, 7)
-    long = np.linspace(-180, 180, 7)#37)
+    lat = np.linspace(-90, 89, 3)
+    long = np.linspace(-180, 179, 3)#37)
     coords = []
     for a in lat:
         for o in long:
-            coords.append([a, o, 0])
+            coords.append([a, o])
     coords = np.array(coords)
-    print(5*len(coords)/60)
     for i in coords:
         bluffton = wgs84.latlon(*i)
         mass = ProcessImage(ts.now(), catalog, bluffton)
         results.append(mass)
     print(round(time.time()-ttt,2),"sec")
 
-    df = pd.DataFrame(data = np.zeros((len(lat), len(long))), columns = lat)
+    df = pd.DataFrame(data = np.zeros((180, 360)), columns = np.arange(-180,180))
+    print(coords)
     for c in range(len(coords)):
-        df.iat[np.where(lat == coords[c][0])[0][0], np.where(long == coords[c][1])[0][0]] = results[c]
+        print(coords[c][0]+90, coords[c][1]+180)
+        print(int(coords[c][0]+90), int(coords[c][1]+180))
+        df.iat[int(coords[c][0]+90), int(coords[c][1]+180)] = results[c]
+
+    
     df.to_csv("ROOS/Results.csv")
 
-Main()
+# Main()
 
+df = pd.read_csv("ROOS/Results.csv", index_col=[0])
 
-# df = pd.read_csv(r"C:\Users\jackl\Documents\Python\GitFiles\test.csv", index_col=[0])
-# fig = px.scatter_geo(df, lat='lat', lon='long', hover_name='res')
-# fig.show()
+from scipy.interpolate import interp1d
+import re
+
+for i in range(len(df)):
+    y = df.iloc[i].to_numpy()
+    xnew = np.arange(len(y))
+
+    zero_idx = np.where(y==0)
+    xold = np.delete(xnew,zero_idx)
+    yold = np.delete(y, zero_idx)
+
+    if len(xold) > 0:
+        f = interp1d(xold,yold)
+        ynew = f(xnew)
+        df.iloc[i] = ynew
+
+for i in range(len(df.iloc[0])):
+    y = df.iloc[:, i].to_numpy()
+    xnew = np.arange(len(y))
+
+    zero_idx = np.where(y==0)
+    xold = np.delete(xnew,zero_idx)
+    yold = np.delete(y, zero_idx)
+
+    if len(xold) > 0:
+        f = interp1d(xold,yold)
+        ynew = f(xnew)
+        df.iloc[:, i] = ynew
+
+df.to_html("ROOS/Results.html", header=False, index=False, table_id="tab")
+
+f = open("ROOS/Results.html", "r")
+html_txt = f.read()
+f.close() 
+
+f = open("ROOS/index.html", "r")
+site_txt = f.read()
+f.close() 
+
+string_to_find = "<!-- POSITION OF TABLE -->"
+inds = [_.start() for _ in re.finditer("<!-- POSITION OF TABLE -->", site_txt)]
+inds[0] += len(string_to_find)
+output_line = site_txt[:inds[0]] + "\n<table hidden" + html_txt[6:] + "\n" + site_txt[inds[1]:]
+
+with open('ROOS/index.html', 'w') as f:
+    f.write(output_line)
+
+df.to_csv("ROOS/Results.csv")
