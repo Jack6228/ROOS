@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Running Out of Space</title>
+    <link rel="icon" href="https://static.wixstatic.com/media/9bf4f8_294f1e6ac2a54422bb513294208ba5de~mv2.png"
+        type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        function page_load() {
+            document.body.className = 'backgroundAnimated';
+            $('#fade_in_1').delay(700).fadeIn(2000);
+            $('#fade_in_2').delay(1300).fadeIn(2000);
+            $('#fade_in_4').delay(1600).fadeIn(2000);
+            // $('#fade_in_1').delay(0).fadeIn(0);
+            // $('#fade_in_2').delay(0).fadeIn(0);
+            // $('#fade_in_4').delay(0).fadeIn(0);
+        }
+
+        function disableBack() { window.history.forward(); }
+        setTimeout("disableBack()", 0);
+        window.onunload = function () { null };
+        
+    </script>
+
+    <style>
+        .backgroundAnimatedLoading {
+            background: linear-gradient(0deg, blue, lightblue, lightblue, salmon, #e7b221, #142185, navy, black, black, black, black);
+            /* background: linear-gradient(0deg, black, black, black, black, navy, #142185, #e7b221, salmon, blue, blue, blue); */
+            background-size: 400% 400%;
+            animation: gradient 25s ease infinite;
+            height: 100vh;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 50% 100%;
+            }
+
+            100% {
+                background-position: 50% 0%;
+            }
+        }
+
+        @-o-keyframes fadeIt {
+            0% {
+                background-color: black;
+            }
+
+            50% {
+                background-color: pink;
+            }
+
+            100% {
+                background-color: black;
+            }
+        }
+
+        @keyframes fadeIt {
+            0% {
+                background: linear-gradient(230deg, #58737b, #212222);
+            }
+
+            50% {
+                background: linear-gradient(236deg, #58737b, #212222);
+            }
+
+            100% {
+                background: linear-gradient(236deg, #58737b, #212222);
+            }
+        }
+
+        .backgroundAnimated {
+            background: linear-gradient(to right, rgba(33, 34, 34, 1), rgb(88, 115, 123, 0.5)), url(https://grainy-gradients.vercel.app/noise.svg);
+        }
+
+    </style>
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K3973C1WM1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-K3973C1WM1');
+</script>
+
+<body onload="page_load();" class="full-screen flex-center">
+
+    <center>
+
+    <div style="left:-50vw;" class="main-container">
+        <div hidden class="sky" id="loading">
+            <div class="stars"></div>
+            <div class="stars2"></div>
+            <div class="stars3"></div>
+        </div>
+    </div>
+
+        <div hidden id="n1" class="center_two">
+            <h1
+                style="color: white; font-family: myFont; font-weight: normal; text-shadow: 0px 0px 5px #fff; font-size: 2em;">
+                It's a clear night.</h1>
+        </div>
+        <div hidden id="n2" class="center_two">
+            <h1
+                style="color: white; font-family: myFont; font-weight: normal; text-shadow: 0px 0px 5px #fff; font-size: 2em;">
+                You look up to the stars.</h1>
+        </div>
+        <div hidden id="n3" class="center_two">
+            <h1
+                style="color: white; font-family: myFont; font-weight: normal; text-shadow: 0px 0px 5px #fff; font-size: 2em;">
+                A plethora of satellites and human-made objects traverse the night sky.</h1>
+        </div>
+        <div hidden id="n4" class="center_two">
+            <h1
+                style="color: white; font-family: myFont; font-weight: normal; text-shadow: 0px 0px 5px #fff; font-size: 2em;">
+                They're too small to be seen by the naked eye, but you wonder what you would see if they weren't...
+            </h1>
+        </div>
+
+        <div hidden id="hills">                                                              <!--fromleft  fadeoutorder--> 
+            <div class="triangles3" id="triangles1" style="bottom: -15%; left: 15%;"></div>  <!-- 4 3-->
+            <div class="triangles3" id="triangles2" style="bottom: -20%; left: 25%;"></div>  <!-- 5 1-->
+            <div class="triangles3" id="triangles3" style="bottom: -15%; left: 35%;"></div>  <!-- 6 2-->
+            <div class="triangles3" id="triangles4" style="bottom: -10%; left: 5%;"></div>  <!-- 3 -->
+            <div class="triangles2" id="triangles5" style="bottom: -10%; left: -10%;"></div>  <!-- 2 -->
+            <div class="triangles2" id="triangles6" style="bottom: -20%; left: 50%;"></div>  <!-- 7 -->
+            <div class="triangles2" id="triangles7" style="bottom: -10%; left: 60%;"></div>  <!-- 8 -->
+            <div class="triangles1" id="triangles8" style="bottom: -10%; left: 75%;"></div>  <!-- 9 -->
+            <div class="triangles1" id="triangles9" style="bottom: -10%; left: -25%;"></div>  <!-- 1 -->
+        </div>
+
+        <div id="content">
+            <div hidden style="top:32%; width:100%;" class="center_one" id="fade_in_1">
+                <h1 style="color: #fff1ef; text-shadow: 0px 0px 20px rgba(255, 241, 239, 0.6)">This website requires
+                    your location.</h1>
+            </div>
+            <br>
+
+            <div hidden id="fade_in_2" class="center_two">
+                <button name="geo" onclick="getLocation();"
+                    style="font-weight: bold; font-size: 85%; text-shadow: none; color: #1e1f20;">USE DEVICE</button>
+                <button name="man" class="manual_button" onclick="loadmanual();"
+                    style="color: #fff1ef; font-weight: bold; font-size: 85%; text-shadow: none">ENTER MANUALLY</button>
+            </div>
+
+            <div hidden style="top: 35%;" id="fade_in_3" class="center_three">
+                <form action="." method="POST">
+                    <input id="lat" type="text" name="anything1" placeholder="LATITUDE (-90 to 90)">
+                    <input id="lon" type="text" name="anything2"
+                        placeholder="LONGITUDE (-180 to 180)">
+                    <br><br>
+                    <input class="continue" type="submit" name="anything_submit" value="CONTINUE"
+                        onclick="return validateForm();">
+                </form>
+            </div>
+            <h1 class="center_four" style="color:white; font-family: myFont; font-size: small; font-weight: normal;"
+                id="manual_reply"></h1>
+            <div id="fail_geo">
+                <h1 class="center_four"
+                    style="color:white; font-family: myFont; font-size: small; font-weight: normal;"></h1>
+            </div>
+        </div>
+        
+        <div hidden style="top:48%; width:100%;" class="center_five" id="fade_in_4">
+            <h1 style="width: 25vw; font-size: 59%; color: #9b9591; text-align: left;">By clicking Use Device or Enter Manually, I agree that I have read and accepted the <a id="pivbtn" target="_blank" href="https://9bf4f8ba-2429-4058-bb66-49be2744c3c8.usrfiles.com/ugd/9bf4f8_17e900a53b894c958a4d3280807a54b3.pdf">Privacy Policy</a></h1>
+        </div>
+        
+    </center>
+
+    <script>
+        var x = document.getElementById("lat");
+        var y = document.getElementById("lon");
+
+        function loadmanual() {
+            $('#fade_in_1').fadeOut(700);
+            $('#fade_in_2').fadeOut(700);
+            $('#fade_in_4').fadeOut(700);
+            $('#fade_in_3').delay(700).fadeIn(1500);
+        }
+
+        function MoveDown() {
+            $('#triangles1').delay(2800).fadeOut(2000);
+            $('#triangles2').delay(2600).fadeOut(2000);
+            $('#triangles3').delay(2700).fadeOut(2000);
+            $('#triangles4').delay(2900).fadeOut(2000);
+            $('#triangles5').delay(3200).fadeOut(2000);
+            $('#triangles6').delay(3000).fadeOut(2000);
+            $('#triangles7').delay(3100).fadeOut(2000);
+            $('#triangles8').delay(3400).fadeOut(2000);
+            $('#triangles9').delay(3300).fadeOut(2000);
+        }
+
+        function getLocation() {
+            $('#fade_in_1').delay(0100).fadeOut(1400);
+            $('#fade_in_2').delay(0500).fadeOut(1400);
+            $('#fade_in_4').delay(0900).fadeOut(1200);
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            }
+            else { showError(); }
+        }
+
+        function showPosition(position) {
+            x.value = position.coords.latitude.toFixed(2);
+            y.value = position.coords.longitude.toFixed(2);
+            $('#fade_in_3').delay(1000).fadeIn(1300);
+        }
+
+        function loading() {
+            document.getElementById("fade_in_4").style.display = "none";
+            document.getElementById("content").style.display = "none";
+            $('#loading').delay(5000).fadeIn(2000);
+            // $('#hills').fadeIn(1000);
+            document.body.className = 'backgroundAnimatedLoading';
+            // setTimeout(MoveDown, 3500);
+            $('#n1').delay(500).fadeIn(400).delay(2000).fadeOut(400);
+            $('#n2').delay(3800).fadeIn(400).delay(2000).fadeOut(400);
+            $('#n3').delay(7100).fadeIn(400).delay(3000).fadeOut(400);
+            $('#n4').delay(11400).fadeIn(400).delay(3000).fadeOut(400);
+            document.getElementById("privacy").style.display = "none";
+        }
+
+        function showError(error) {
+            let error_msg = document.getElementById('manual_reply');
+            error_msg.innerHTML = "<br>Gelocation failed, please enter manually or reload and try again";
+        }
+
+        function validateForm() {
+            let x2 = document.getElementById("lat").value;
+            let error_msg = document.getElementById('manual_reply');
+            let x3 = document.getElementById("lon").value;
+            let fail = "false"
+            let text = "";
+            if (isNaN(x2) == true || x2 == "") {
+                text = "<br>Please enter a number";
+                fail = "true";
+            }
+            if (isNaN(x3) == true || x3 == "") {
+                text = "<br>Please enter a number";
+                fail = "true";
+            }
+
+            if (fail == "false") {
+                x2 = parseFloat(x2);
+                x3 = parseFloat(x3);
+                if (x2 < -90 || x2 > 90) {
+                    fail = "true";
+                    text = "<br>Latitude must be between -90 and 90"
+                }
+                if (x3 < -180 || x3 > 180) {
+                    fail = "true";
+                    text = "<br>Longitude must be between -180 and 180"
+                }
+            }
+
+            if (fail == "true") {
+                error_msg.innerHTML = text;
+                return false;
+            } else {
+                loading();
+                return true;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

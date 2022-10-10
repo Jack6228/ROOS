@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="refresh" content="300">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>Running Out of Space</title>
+    <link rel="icon" href="https://static.wixstatic.com/media/9bf4f8_294f1e6ac2a54422bb513294208ba5de~mv2.png" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        var timestamp = 0;
+        const first = '{{ my_data[0] }}';
+        const second = '{{ my_data[1] }}';
+        const objs_one = parseFloat('{{ my_data[5] }}');
+        const objs_two = parseFloat('{{ my_data[6] }}');
+        const max_num_objs = 750;
+        const num_of_spans = parseInt( 100 * ( ( (objs_one + objs_two) / 2 ) / max_num_objs ) );
+
+        function disableBack() { window.history.forward(); }
+        setTimeout("disableBack()", 0);
+        window.onunload = function () { null };
+
+        function start_load() {
+            // document.body.className = 'backgroundAnimatedLoading';
+            display_ct();
+            set_up_pips();
+            fade_in_extras();
+            $('#car_mass').hide();
+            $('#elephant_mass').hide();
+            $('#human_mass').hide();
+            $('#whale_mass').hide();
+            $('#bigben_mass').hide();
+            $('#apple_mass').hide();
+        }
+
+        function fade_in_extras() {
+            $('#number').delay(1000).fadeIn(2000);
+            $('#explain').delay(3500).fadeIn(3000);
+            $('#caveats').delay(6000).fadeIn(2000);
+        }
+
+        function set_up_pips() {
+            var spans = document.getElementsByTagName('span');
+            var l = spans.length;
+            for (var i=0;i<l;i++) {
+                if (i < num_of_spans) {
+                    spans[i].style.display= '';
+                } else {
+                    spans[i].style.display= 'none';                    
+                }
+            }
+        }
+
+        function display_c() {
+            var refresh = 100; // Refresh rate in milli seconds
+            timestamp = timestamp + (refresh / 1000);
+            var trigger = 0;
+            if (timestamp >= 290) {
+                var trigger = 1;
+            }
+            if (trigger == 1) {
+                alert("The page will automatically refresh in 10 seconds to reduce our carbon footprint");
+                var trigger = 2;
+            }
+            mytime = setTimeout('display_ct()', refresh);
+        }
+
+        function display_ct() {
+            // Get polynomial changing values from actual data...
+            // Formula for intermediate values is sine curve with period of 100 seconds (100 = 2pi), amplitude of 20% of initial value
+            var difference = second - first;
+            var sin_term = Math.sin((timestamp / 100) * Math.PI * 2);
+            var difference_term = parseFloat((difference * (timestamp / (5 * 60))));
+            var mass_val = parseFloat(first) + parseFloat(difference_term) + parseFloat(0.2 * first * sin_term);
+            document.getElementById('python').innerHTML = parseFloat(parseFloat(mass_val).toFixed()).toLocaleString('en-GB') + " kg";
+            document.getElementById('car_mass').innerHTML = "    " + parseFloat(parseFloat(mass_val/1050).toFixed()).toLocaleString('en-GB') + " nissan micras";
+            document.getElementById('elephant_mass').innerHTML = "    " + parseFloat(parseFloat(mass_val/4000).toFixed()).toLocaleString('en-GB') + " adult elephants";
+            document.getElementById('human_mass').innerHTML = "    " + parseFloat(parseFloat(mass_val/70).toFixed()).toLocaleString('en-GB') + " humans";
+            document.getElementById('whale_mass').innerHTML = "    " + parseFloat(parseFloat(mass_val/140000).toFixed()).toLocaleString('en-GB') + " blue whales";
+            document.getElementById('bigben_mass').innerHTML = "    " + parseFloat(parseFloat(mass_val/13760).toFixed()).toLocaleString('en-GB') + " Big Bens";
+            document.getElementById('apple_mass').innerHTML = "    " + parseFloat(parseFloat(mass_val/0.2).toFixed()).toLocaleString('en-GB') + " apples";
+            if (timestamp <= (5*60)) {
+                display_c();
+            }
+        }
+
+    </script>
+
+<style>
+
+    body {
+        animation: fadeInAnimation ease 5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        background: black;
+        /* background: #000000 url(https://grainy-gradients.vercel.app/noise.svg); */
+    }
+</style>
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K3973C1WM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K3973C1WM1');
+</script>
+
+<body onload=start_load(); class="full-screen flex-center">
+    
+    <center>
+
+    <div class="connected-steps" id="mass_circles">
+            <div class="step" style="top: 25vh; left: 15vw;" id="car_mass">1</div>
+            <div class="step" style="top: 05vh; left: 43.5vw;" id="elephant_mass">2</div>
+            <div class="step" style="top: 25vh; left: 75vw;" id="human_mass">3</div>
+            <div class="step" style="top: 57vh; left: 75vw;" id="whale_mass">4</div>
+            <div class="step" style="top: 77vh; left: 43.5vw;" id="bigben_mass">5</div>
+            <div class="step" style="top: 57vh; left: 15vw;" id="apple_mass">6</div>
+    </div>
+
+    <section id="span">
+        <span id="spann1"></span>
+        <span id="spann2"></span>
+        <span id="spann3"></span>
+        <span id="spann4"></span>
+        <span id="spann5"></span>
+        <span id="spann6"></span>
+        <span id="spann7"></span>
+        <span id="spann8"></span>
+        <span id="spann9"></span>
+        <span id="spann10"></span>
+        <span id="spann11"></span>
+        <span id="spann12"></span>
+        <span id="spann13"></span>
+        <span id="spann14"></span>
+        <span id="spann15"></span>
+        <span id="spann16"></span>
+        <span id="spann17"></span>
+        <span id="spann18"></span>
+        <span id="spann19"></span>
+        <span id="spann20"></span>
+        <span id="spann21"></span>
+        <span id="spann22"></span>
+        <span id="spann23"></span>
+        <span id="spann24"></span>
+        <span id="spann25"></span>
+        <span id="spann26"></span>
+        <span id="spann27"></span>
+        <span id="spann28"></span>
+        <span id="spann29"></span>
+        <span id="spann30"></span>
+        <span id="spann31"></span>
+        <span id="spann32"></span>
+        <span id="spann33"></span>
+        <span id="spann34"></span>
+        <span id="spann35"></span>
+        <span id="spann36"></span>
+        <span id="spann37"></span>
+        <span id="spann38"></span>
+        <span id="spann39"></span>
+        <span id="spann40"></span>
+        <span id="spann41"></span>
+        <span id="spann42"></span>
+        <span id="spann43"></span>
+        <span id="spann44"></span>
+        <span id="spann45"></span>
+        <span id="spann46"></span>
+        <span id="spann47"></span>
+        <span id="spann48"></span>
+        <span id="spann49"></span>
+        <span id="spann50"></span>
+        <span id="spann51"></span>
+        <span id="spann52"></span>
+        <span id="spann53"></span>
+        <span id="spann54"></span>
+        <span id="spann55"></span>
+        <span id="spann56"></span>
+        <span id="spann57"></span>
+        <span id="spann58"></span>
+        <span id="spann59"></span>
+        <span id="spann60"></span>
+        <span id="spann61"></span>
+        <span id="spann62"></span>
+        <span id="spann63"></span>
+        <span id="spann64"></span>
+        <span id="spann65"></span>
+        <span id="spann66"></span>
+        <span id="spann67"></span>
+        <span id="spann68"></span>
+        <span id="spann69"></span>
+        <span id="spann70"></span>
+        <span id="spann71"></span>
+        <span id="spann72"></span>
+        <span id="spann73"></span>
+        <span id="spann74"></span>
+        <span id="spann75"></span>
+        <span id="spann76"></span>
+        <span id="spann77"></span>
+        <span id="spann78"></span>
+        <span id="spann79"></span>
+        <span id="spann80"></span>
+        <span id="spann81"></span>
+        <span id="spann82"></span>
+        <span id="spann83"></span>
+        <span id="spann84"></span>
+        <span id="spann85"></span>
+        <span id="spann86"></span>
+        <span id="spann87"></span>
+        <span id="spann88"></span>
+        <span id="spann89"></span>
+        <span id="spann90"></span>
+        <span id="spann91"></span>
+        <span id="spann92"></span>
+        <span id="spann93"></span>
+        <span id="spann94"></span>
+        <span id="spann95"></span>
+        <span id="spann96"></span>
+        <span id="spann97"></span>
+        <span id="spann98"></span>
+        <span id="spann99"></span>
+        <span id="spann100"></span>
+      </section>  
+  
+    <div hidden class="center_2_5" id="number" style="display: inline-block; top: 35%;"> <!--onmouseover="showelephants()" onmouseout="hideelephants()"> -->
+        <center>
+            <p style="color: #f7f5e8">In space right now there are</p>
+            <p2 id="python" class="python-output-here" style="font-size: 400%; color: #f7f5e8">---,--- kg</p2>
+            <p style="color: #f7f5e8">of human-made objects above your head</p>
+        </center>
+    </div>
+
+    <div class="center_seven" style="display: none;" id="explain">
+        <center>
+            <!-- <button id="plsexp" class="explain" onclick=" window.open('https://9bf4f8ba-2429-4058-bb66-49be2744c3c8.usrfiles.com/ugd/9bf4f8_3fc8221c15b449e699618bd3b1b4cece.pdf','_blank')">PLEASE EXPLAIN</button> -->
+            <!-- <button id="show_elep_data" class="explain" onclick="showelephants()">CONVERT TO ELEPHANTS</button> -->
+        </center>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p class="close" id="closex" style="vertical-align: text-top;">&times;</p>
+            <h1 style="font-size: small;">explain stuff here and link to document</h1>
+        </div>
+    </div>
+
+    <!-- <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p class="close" id="closex" style="vertical-align: text-top;">&times;</p>
+            <h1 style="font-size: small;">This mass is equivalent to:</h1> <br>
+            <h1 style="font-size: small;" id="car_mass"></h1>
+            <h1 style="font-size: small;" id="elephant_mass"></h1>
+            <h1 style="font-size: small;" id="apple_mass"></h1>
+        </div>
+    </div> -->
+    
+    <div style="display: none;" class="row footer" id="caveats">
+        <div >
+            <center>
+                <p3 style="width: 100vw;">
+                    <a id="elephants" target="_blank" href="#" >About</a> ┊ <a target="_blank" href="https://9bf4f8ba-2429-4058-bb66-49be2744c3c8.usrfiles.com/ugd/9bf4f8_17e900a53b894c958a4d3280807a54b3.pdf">Privacy Policy</a> ┊ <a target="_blank" href="https://ko-fi.com/runningoutofspace">Tip us a Coffee</a></a>
+                </p3>
+            </center>
+        </div>
+      </div>
+    
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        // Get the button that opens the modal
+        var btn = document.getElementById("elephants");
+        // Get the <span> element that closes the modal
+        var spanx = document.getElementById("closex");
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+        modal.style.display = "block";
+        }
+        // When the user clicks on <span> (x), close the modal
+            spanx.onclick = function() {
+        modal.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+
+        function showelephants() {
+            $('#car_mass').delay(200).fadeIn(1000);
+            $('#elephant_mass').delay(400).fadeIn(1000);
+            $('#human_mass').delay(600).fadeIn(1000);
+            $('#whale_mass').delay(800).fadeIn(1000);
+            $('#bigben_mass').delay(1000).fadeIn(1000);
+            $('#apple_mass').delay(1200).fadeIn(1000);
+            $('#car_mass').delay(4200).fadeOut(1000);
+            $('#elephant_mass').delay(4400).fadeOut(1000);
+            $('#human_mass').delay(4600).fadeOut(1000);
+            $('#whale_mass').delay(4800).fadeOut(1000);
+            $('#bigben_mass').delay(5000).fadeOut(1000);
+            $('#apple_mass').delay(5200).fadeOut(1000);
+        }
+
+        // function hideelephants() {
+        //     $('#car_mass').delay(200).fadeOut(1000);
+        //     $('#elephant_mass').delay(400).fadeOut(1000);
+        //     $('#apple_mass').delay(600).fadeOut(1000);
+        //     $('#apple_mass2').delay(800).fadeOut(1000);
+        //     $('#apple_mass3').delay(1000).fadeOut(1000);
+        //     $('#apple_mass4').delay(1200).fadeOut(1000);
+        //     setTimeout(box.style.display = 'none', 3500);
+        // }
+
+    </script>
+
+    </center>
+
+</body>
+</html>
