@@ -16,9 +16,6 @@
             $('#fade_in_1').delay(700).fadeIn(2000);
             $('#fade_in_2').delay(1300).fadeIn(2000);
             $('#fade_in_4').delay(1600).fadeIn(2000);
-            // $('#fade_in_1').delay(0).fadeIn(0);
-            // $('#fade_in_2').delay(0).fadeIn(0);
-            // $('#fade_in_4').delay(0).fadeIn(0);
         }
 
         function disableBack() { window.history.forward(); }
@@ -29,13 +26,24 @@
 
     <style>
         .backgroundAnimatedLoading {
-            background: linear-gradient(0deg, blue, lightblue, lightblue, salmon, #e7b221, #142185, navy, black, black, black, black);
-            /* background: linear-gradient(0deg, black, black, black, black, navy, #142185, #e7b221, salmon, blue, blue, blue); */
-            background-size: 400% 400%;
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+10,000000+20,000000+30,000080+40,142185+50,e7b221+60,fa8072+70,add8e6+80,add8e6+90,0000ff+100 */
+            /* Old browsers */
+            background: rgb(0,0,0); 
+            /* FF3.6-15 */
+            background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 30%, rgba(0,0,128,1) 40%, rgba(20,33,133,1) 50%, rgba(231,178,33,1) 60%, rgba(250,128,114,1) 70%, rgba(173,216,230,1) 80%, rgba(173,216,230,1) 90%, rgba(0,0,255,1) 100%); 
+            /* Chrome10-25,Safari5.1-6 */
+            background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 10%,rgba(0,0,0,1) 20%,rgba(0,0,0,1) 30%,rgba(0,0,128,1) 40%,rgba(20,33,133,1) 50%,rgba(231,178,33,1) 60%,rgba(250,128,114,1) 70%,rgba(173,216,230,1) 80%,rgba(173,216,230,1) 90%,rgba(0,0,255,1) 100%); 
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 10%,rgba(0,0,0,1) 20%,rgba(0,0,0,1) 30%,rgba(0,0,128,1) 40%,rgba(20,33,133,1) 50%,rgba(231,178,33,1) 60%,rgba(250,128,114,1) 70%,rgba(173,216,230,1) 80%,rgba(173,216,230,1) 90%,rgba(0,0,255,1) 100%); 
+            /* IE6-9 */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#0000ff',GradientType=0 ); 
+            -webkit-animation: gradient_wk 25s ease infinite; 
             animation: gradient 25s ease infinite;
-            height: 100vh;
             animation-fill-mode: forwards;
+            animation-duration: 25s;
             animation-iteration-count: 1;
+            background-size: 400% 400%;
+            height: 100vh;
         }
 
         @keyframes gradient {
@@ -48,36 +56,29 @@
             }
         }
 
-        @-o-keyframes fadeIt {
+        @-webkit-keyframes gradient_wk {
             0% {
-                background-color: black;
-            }
-
-            50% {
-                background-color: pink;
+                background-position: 50% 100%;
             }
 
             100% {
-                background-color: black;
-            }
-        }
-
-        @keyframes fadeIt {
-            0% {
-                background: linear-gradient(230deg, #58737b, #212222);
-            }
-
-            50% {
-                background: linear-gradient(236deg, #58737b, #212222);
-            }
-
-            100% {
-                background: linear-gradient(236deg, #58737b, #212222);
+                background-position: 50% 0%;
             }
         }
 
         .backgroundAnimated {
-            background: linear-gradient(to right, rgba(33, 34, 34, 1), rgb(88, 115, 123, 0.5)), url(https://grainy-gradients.vercel.app/noise.svg);
+            /* Created with https://www.css-gradient.com */
+            background: #212222;
+            background: -webkit-linear-gradient(right, #212222, #58737B80);
+            background: -moz-linear-gradient(right, #212222, #58737B80);
+            background: linear-gradient(to left, #212222, #58737B80);
+
+            /* background-color: rgb(88, 115, 123, 0.5);
+            background-image: -webkit-linear-gradient(to right, rgba(33, 34, 34, 1), rgb(88, 115, 123, 0.5)), url(https://grainy-gradients.vercel.app/noise.svg);
+            background-image:    -moz-linear-gradient(to right, rgba(33, 34, 34, 1), rgb(88, 115, 123, 0.5)), url(https://grainy-gradients.vercel.app/noise.svg);
+            background-image:      -o-linear-gradient(to right, rgba(33, 34, 34, 1), rgb(88, 115, 123, 0.5)), url(https://grainy-gradients.vercel.app/noise.svg);
+            background-image:         linear-gradient(to right, rgba(33, 34, 34, 1), rgb(88, 115, 123, 0.5)), url(https://grainy-gradients.vercel.app/noise.svg);
+            background: linear-gradient(to right, rgba(33, 34, 34, 1), rgb(88, 115, 123, 0.5)), url(https://grainy-gradients.vercel.app/noise.svg); */
         }
 
     </style>
@@ -107,9 +108,12 @@
     </div>
 
         <div hidden id="n1" class="center_two">
-            <h1
+            <!-- <h1
                 style="color: white; font-family: myFont; font-weight: normal; text-shadow: 0px 0px 5px #fff; font-size: 2em;">
-                It's a clear night.</h1>
+                It's a clear night.</h1> -->
+            <h1
+            style="color: white; font-family: myFont; font-weight: normal; font-size: 2em;">
+            It's a clear night.</h1>
         </div>
         <div hidden id="n2" class="center_two">
             <h1
@@ -128,21 +132,9 @@
             </h1>
         </div>
 
-        <div hidden id="hills">                                                              <!--fromleft  fadeoutorder--> 
-            <div class="triangles3" id="triangles1" style="bottom: -15%; left: 15%;"></div>  <!-- 4 3-->
-            <div class="triangles3" id="triangles2" style="bottom: -20%; left: 25%;"></div>  <!-- 5 1-->
-            <div class="triangles3" id="triangles3" style="bottom: -15%; left: 35%;"></div>  <!-- 6 2-->
-            <div class="triangles3" id="triangles4" style="bottom: -10%; left: 5%;"></div>  <!-- 3 -->
-            <div class="triangles2" id="triangles5" style="bottom: -10%; left: -10%;"></div>  <!-- 2 -->
-            <div class="triangles2" id="triangles6" style="bottom: -20%; left: 50%;"></div>  <!-- 7 -->
-            <div class="triangles2" id="triangles7" style="bottom: -10%; left: 60%;"></div>  <!-- 8 -->
-            <div class="triangles1" id="triangles8" style="bottom: -10%; left: 75%;"></div>  <!-- 9 -->
-            <div class="triangles1" id="triangles9" style="bottom: -10%; left: -25%;"></div>  <!-- 1 -->
-        </div>
-
         <div id="content">
             <div hidden style="top:32%; width:100%;" class="center_one" id="fade_in_1">
-                <h1 style="color: #fff1ef; text-shadow: 0px 0px 20px rgba(255, 241, 239, 0.6)">This website requires
+                <h1 style="text-align: middle; text-justify: inter-word; color: #fff1ef; text-shadow: 0px 0px 20px rgba(255, 241, 239, 0.6)">This website requires
                     your location.</h1>
             </div>
             <br>
@@ -164,16 +156,17 @@
                         onclick="return validateForm();">
                 </form>
             </div>
-            <h1 class="center_four" style="color:white; font-family: myFont; font-size: small; font-weight: normal;"
+            <h1 class="center_four replies" style="color:white; font-family: myFont; font-size: small; font-weight: normal;"
                 id="manual_reply"></h1>
-            <div id="fail_geo">
-                <h1 class="center_four"
-                    style="color:white; font-family: myFont; font-size: small; font-weight: normal;"></h1>
+            <div id="fail_geo" >
+                <h1 class="center_four replies" style="color:white; font-family: myFont; font-size: small; font-weight: normal;"></h1>
             </div>
         </div>
         
-        <div hidden style="top:48%; width:100%;" class="center_five" id="fade_in_4">
-            <h1 style="width: 25vw; font-size: 59%; color: #9b9591; text-align: left;">By clicking Use Device or Enter Manually, I agree that I have read and accepted the <a id="pivbtn" target="_blank" href="https://9bf4f8ba-2429-4058-bb66-49be2744c3c8.usrfiles.com/ugd/9bf4f8_17e900a53b894c958a4d3280807a54b3.pdf">Privacy Policy</a></h1>
+        <div hidden class="priv_not center_five" id="fade_in_4">
+            <center>
+                <h1 style="text-align: middle; text-justify: inter-word; font-size: 81%; color: #FFFFFF;">By clicking Use Device or Enter Manually, I agree I have read and accepted the <a id="pivbtn" target="_blank" href="https://9bf4f8ba-2429-4058-bb66-49be2744c3c8.usrfiles.com/ugd/9bf4f8_17e900a53b894c958a4d3280807a54b3.pdf">Privacy Policy</a></h1>
+            </center>    
         </div>
         
     </center>
@@ -189,22 +182,7 @@
             $('#fade_in_3').delay(700).fadeIn(1500);
         }
 
-        function MoveDown() {
-            $('#triangles1').delay(2800).fadeOut(2000);
-            $('#triangles2').delay(2600).fadeOut(2000);
-            $('#triangles3').delay(2700).fadeOut(2000);
-            $('#triangles4').delay(2900).fadeOut(2000);
-            $('#triangles5').delay(3200).fadeOut(2000);
-            $('#triangles6').delay(3000).fadeOut(2000);
-            $('#triangles7').delay(3100).fadeOut(2000);
-            $('#triangles8').delay(3400).fadeOut(2000);
-            $('#triangles9').delay(3300).fadeOut(2000);
-        }
-
         function getLocation() {
-            $('#fade_in_1').delay(0100).fadeOut(1400);
-            $('#fade_in_2').delay(0500).fadeOut(1400);
-            $('#fade_in_4').delay(0900).fadeOut(1200);
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition, showError);
             }
@@ -214,6 +192,9 @@
         function showPosition(position) {
             x.value = position.coords.latitude.toFixed(2);
             y.value = position.coords.longitude.toFixed(2);
+            $('#fade_in_1').fadeOut(1400);
+            $('#fade_in_2').fadeOut(1400);
+            $('#fade_in_4').fadeOut(1200);
             $('#fade_in_3').delay(1000).fadeIn(1300);
         }
 
@@ -221,14 +202,11 @@
             document.getElementById("fade_in_4").style.display = "none";
             document.getElementById("content").style.display = "none";
             $('#loading').delay(5000).fadeIn(2000);
-            // $('#hills').fadeIn(1000);
             document.body.className = 'backgroundAnimatedLoading';
-            // setTimeout(MoveDown, 3500);
             $('#n1').delay(500).fadeIn(400).delay(2000).fadeOut(400);
             $('#n2').delay(3800).fadeIn(400).delay(2000).fadeOut(400);
             $('#n3').delay(7100).fadeIn(400).delay(3000).fadeOut(400);
             $('#n4').delay(11400).fadeIn(400).delay(3000).fadeOut(400);
-            document.getElementById("privacy").style.display = "none";
         }
 
         function showError(error) {

@@ -11,6 +11,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
         var timestamp = 0;
+        let trigger = 0;
         const first = '{{ my_data[0] }}';
         const second = '{{ my_data[1] }}';
         const objs_one = parseFloat('{{ my_data[5] }}');
@@ -24,6 +25,7 @@
 
         function start_load() {
             // document.body.className = 'backgroundAnimatedLoading';
+            localStorage.setItem('alerted','no');
             display_ct();
             set_up_pips();
             fade_in_extras();
@@ -56,13 +58,12 @@
         function display_c() {
             var refresh = 100; // Refresh rate in milli seconds
             timestamp = timestamp + (refresh / 1000);
-            var trigger = 0;
-            if (timestamp >= 290) {
-                var trigger = 1;
-            }
-            if (trigger == 1) {
-                alert("The page will automatically refresh in 10 seconds to reduce our carbon footprint");
-                var trigger = 2;
+            if (timestamp >= 270 && trigger == 0) {
+                var alerted = localStorage.getItem('alerted') || '';
+                if (alerted != 'yes') {
+                    alert("The page will automatically refresh in 30 seconds to reduce our carbon footprint");
+                    localStorage.setItem('alerted','yes');
+                }
             }
             mytime = setTimeout('display_ct()', refresh);
         }
@@ -71,10 +72,14 @@
             // Get polynomial changing values from actual data...
             // Formula for intermediate values is sine curve with period of 100 seconds (100 = 2pi), amplitude of 20% of initial value
             var difference = second - first;
+            var difference2 = objs_two - objs_one;
             var sin_term = Math.sin((timestamp / 100) * Math.PI * 2);
             var difference_term = parseFloat((difference * (timestamp / (5 * 60))));
+            var difference_term2 = parseFloat((difference2 * (timestamp / (5 * 60))));
             var mass_val = parseFloat(first) + parseFloat(difference_term) + parseFloat(0.2 * first * sin_term);
+            var sat_val = parseFloat(objs_one) + parseFloat(difference_term2) + parseFloat(0.2 * objs_one * sin_term);
             document.getElementById('python').innerHTML = parseFloat(parseFloat(mass_val).toFixed()).toLocaleString('en-GB') + " kg";
+            document.getElementById('python2').innerHTML = parseFloat(parseFloat(sat_val).toFixed()) + " satellites<em>, or</em>";
             document.getElementById('car_mass').innerHTML = "    " + parseFloat(parseFloat(mass_val/1050).toFixed()).toLocaleString('en-GB') + " nissan micras";
             document.getElementById('elephant_mass').innerHTML = "    " + parseFloat(parseFloat(mass_val/4000).toFixed()).toLocaleString('en-GB') + " adult elephants";
             document.getElementById('human_mass').innerHTML = "    " + parseFloat(parseFloat(mass_val/70).toFixed()).toLocaleString('en-GB') + " humans";
@@ -95,6 +100,7 @@
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
         background: black;
+        
         /* background: #000000 url(https://grainy-gradients.vercel.app/noise.svg); */
     }
 </style>
@@ -227,11 +233,12 @@
         <span id="spann100"></span>
       </section>  
   
-    <div hidden class="center_2_5" id="number" style="display: inline-block; top: 35%;"> <!--onmouseover="showelephants()" onmouseout="hideelephants()"> -->
+    <div hidden class="center_2_5" id="number" style="display: inline-block; background: black;"> <!--onmouseover="showelephants()" onmouseout="hideelephants()"> -->
         <center>
-            <p style="color: #f7f5e8">In space right now there are</p>
-            <p2 id="python" class="python-output-here" style="font-size: 400%; color: #f7f5e8">---,--- kg</p2>
-            <p style="color: #f7f5e8">of human-made objects above your head</p>
+            <p style="color: #C7BCBC">In space right now there are</p>
+            <p id="python2" class="description" style="font-size: 5vh;">000 satellites<em>, or</em></p>
+            <p2 id="python" class="description">---,--- kg</p2>
+            <p style="color: #C7BCBC">of human-made objects above your head</p>
         </center>
     </div>
 
@@ -259,7 +266,7 @@
         </div>
     </div> -->
     
-    <div style="display: none;" class="row footer" id="caveats">
+    <div style="display: none; background: black;" class="row footer" id="caveats">
         <div >
             <center>
                 <p3 style="width: 100vw;">
