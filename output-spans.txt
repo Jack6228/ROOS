@@ -1,0 +1,700 @@
+span:nth-child(1) {
+    top: 78vh;
+    right: 0;
+    left: initial;
+    animation-delay: 6.03s;
+    animation-duration: 25.29s;
+  }
+span:nth-child(2) {
+    top: 87vh;
+    right: 0;
+    left: initial;
+    animation-delay: 2.72s;
+    animation-duration: 20.81s;
+  }
+span:nth-child(3) {
+    top: 2vh;
+    right: 0;
+    left: initial;
+    animation-delay: 5.92s;
+    animation-duration: 25.04s;
+  }
+span:nth-child(4) {
+    top: 26vh;
+    right: 0;
+    left: initial;
+    animation-delay: 4.72s;
+    animation-duration: 30.0s;
+  }
+span:nth-child(5) {
+    top: 94vh;
+    right: 0;
+    left: initial;
+    animation-delay: 1.14s;
+    animation-duration: 15.96s;
+  }
+span:nth-child(6) {
+    top: 38vh;
+    right: 0;
+    left: initial;
+    animation-delay: 1.32s;
+    animation-duration: 23.0s;
+  }
+span:nth-child(7) {
+    top: 19vh;
+    right: 0;
+    left: initial;
+    animation-delay: 9.7s;
+    animation-duration: 17.98s;
+  }
+span:nth-child(8) {
+    top: 6vh;
+    right: 0;
+    left: initial;
+    animation-delay: 0.67s;
+    animation-duration: 21.67s;
+  }
+span:nth-child(9) {
+    top: 71vh;
+    right: 0;
+    left: initial;
+    animation-delay: 6.69s;
+    animation-duration: 31.87s;
+  }
+span:nth-child(10) {
+    top: 69vh;
+    right: 0;
+    left: initial;
+    animation-delay: 1.62s;
+    animation-duration: 22.53s;
+  }
+span:nth-child(11) {
+    top: 87vh;
+    right: 0;
+    left: initial;
+    animation-delay: 7.04s;
+    animation-duration: 18.84s;
+  }
+span:nth-child(12) {
+    top: 55vh;
+    right: 0;
+    left: initial;
+    animation-delay: 9.4s;
+    animation-duration: 25.89s;
+  }
+span:nth-child(13) {
+    top: 44vh;
+    right: 0;
+    left: initial;
+    animation-delay: 2.49s;
+    animation-duration: 24.23s;
+  }
+span:nth-child(14) {
+    top: 91vh;
+    right: 0;
+    left: initial;
+    animation-delay: 3.27s;
+    animation-duration: 16.78s;
+  }
+span:nth-child(15) {
+    top: 88vh;
+    right: 0;
+    left: initial;
+    animation-delay: 7.06s;
+    animation-duration: 20.64s;
+  }
+span:nth-child(16) {
+    top: 98vh;
+    right: 0;
+    left: initial;
+    animation-delay: 1.38s;
+    animation-duration: 25.69s;
+  }
+span:nth-child(17) {
+    top: 4vh;
+    right: 0;
+    left: initial;
+    animation-delay: 8.28s;
+    animation-duration: 20.59s;
+  }
+span:nth-child(18) {
+    top: 53vh;
+    right: 0;
+    left: initial;
+    animation-delay: 1.78s;
+    animation-duration: 29.39s;
+  }
+span:nth-child(19) {
+    top: 3vh;
+    right: 0;
+    left: initial;
+    animation-delay: 9.15s;
+    animation-duration: 30.8s;
+  }
+span:nth-child(20) {
+    top: 34vh;
+    right: 0;
+    left: initial;
+    animation-delay: 0.71s;
+    animation-duration: 26.0s;
+  }
+span:nth-child(21) {
+    top: 83vh;
+    right: 0;
+    left: initial;
+    animation-delay: 5.63s;
+    animation-duration: 17.24s;
+  }
+span:nth-child(22) {
+    top: 2vh;
+    right: 0;
+    left: initial;
+    animation-delay: 0.19s;
+    animation-duration: 30.55s;
+  }
+span:nth-child(23) {
+    top: 57vh;
+    right: 0;
+    left: initial;
+    animation-delay: 4.1s;
+    animation-duration: 20.4s;
+  }
+span:nth-child(24) {
+    top: 98vh;
+    right: 0;
+    left: initial;
+    animation-delay: 3.93s;
+    animation-duration: 24.57s;
+  }
+span:nth-child(25) {
+    top: 15vh;
+    right: 0;
+    left: initial;
+    animation-delay: 9.88s;
+    animation-duration: 20.64s;
+  }
+span:nth-child(26) {
+    top: 14vh;
+    right: 0;
+    left: initial;
+    animation-delay: 0.51s;
+    animation-duration: 21.42s;
+  }
+span:nth-child(27) {
+    top: 45vh;
+    right: 0;
+    left: initial;
+    animation-delay: 0.46s;
+    animation-duration: 27.13s;
+  }
+span:nth-child(28) {
+    top: 69vh;
+    right: 0;
+    left: initial;
+    animation-delay: 1.08s;
+    animation-duration: 22.65s;
+  }
+span:nth-child(29) {
+    top: 51vh;
+    right: 0;
+    left: initial;
+    animation-delay: 6.04s;
+    animation-duration: 17.73s;
+  }
+span:nth-child(30) {
+    top: 51vh;
+    right: 0;
+    left: initial;
+    animation-delay: 7.45s;
+    animation-duration: 30.41s;
+  }
+span:nth-child(31) {
+    top: 37vh;
+    right: 0;
+    left: initial;
+    animation-delay: 5.69s;
+    animation-duration: 25.8s;
+  }
+span:nth-child(32) {
+    top: 21vh;
+    right: 0;
+    left: initial;
+    animation-delay: 1.35s;
+    animation-duration: 23.32s;
+  }
+span:nth-child(33) {
+    top: 18vh;
+    right: 0;
+    left: initial;
+    animation-delay: 9.73s;
+    animation-duration: 23.16s;
+  }
+span:nth-child(34) {
+    top: 17vh;
+    right: 0;
+    left: initial;
+    animation-delay: 4.43s;
+    animation-duration: 29.15s;
+  }
+span:nth-child(35) {
+    top: 77vh;
+    right: 0;
+    left: initial;
+    animation-delay: 5.6s;
+    animation-duration: 26.88s;
+  }
+span:nth-child(36) {
+    top: 2vh;
+    right: 0;
+    left: initial;
+    animation-delay: 2.74s;
+    animation-duration: 24.71s;
+  }
+span:nth-child(37) {
+    top: 24vh;
+    right: 0;
+    left: initial;
+    animation-delay: 0.27s;
+    animation-duration: 16.29s;
+  }
+span:nth-child(38) {
+    top: 60vh;
+    right: 0;
+    left: initial;
+    animation-delay: 4.15s;
+    animation-duration: 21.15s;
+  }
+span:nth-child(39) {
+    top: 26vh;
+    right: 0;
+    left: initial;
+    animation-delay: 7.66s;
+    animation-duration: 21.05s;
+  }
+span:nth-child(40) {
+    top: 89vh;
+    right: 0;
+    left: initial;
+    animation-delay: 0.14s;
+    animation-duration: 17.41s;
+  }
+span:nth-child(41) {
+    top: 91vh;
+    right: 0;
+    left: initial;
+    animation-delay: 8.07s;
+    animation-duration: 30.23s;
+  }
+span:nth-child(42) {
+    top: 34vh;
+    right: 0;
+    left: initial;
+    animation-delay: 4.88s;
+    animation-duration: 28.6s;
+  }
+span:nth-child(43) {
+    top: 59vh;
+    right: 0;
+    left: initial;
+    animation-delay: 4.58s;
+    animation-duration: 30.57s;
+  }
+span:nth-child(44) {
+    top: 40vh;
+    right: 0;
+    left: initial;
+    animation-delay: 6.09s;
+    animation-duration: 16.44s;
+  }
+span:nth-child(45) {
+    top: 31vh;
+    right: 0;
+    left: initial;
+    animation-delay: 9.78s;
+    animation-duration: 27.68s;
+  }
+span:nth-child(46) {
+    top: 46vh;
+    right: 0;
+    left: initial;
+    animation-delay: 1.1s;
+    animation-duration: 28.42s;
+  }
+span:nth-child(47) {
+    top: 91vh;
+    right: 0;
+    left: initial;
+    animation-delay: 9.97s;
+    animation-duration: 23.17s;
+  }
+span:nth-child(48) {
+    top: 63vh;
+    right: 0;
+    left: initial;
+    animation-delay: 5.8s;
+    animation-duration: 17.84s;
+  }
+span:nth-child(49) {
+    top: 89vh;
+    right: 0;
+    left: initial;
+    animation-delay: 6.37s;
+    animation-duration: 23.59s;
+  }
+span:nth-child(50) {
+    top: 49vh;
+    right: 0;
+    left: initial;
+    animation-delay: 8.64s;
+    animation-duration: 30.8s;
+  }
+span:nth-child(51) {
+    top: 94vh;
+    right: 0;
+    left: initial;
+    animation-delay: 7.43s;
+    animation-duration: 24.89s;
+  }
+span:nth-child(52) {
+    top: 1vh;
+    right: 0;
+    left: initial;
+    animation-delay: 6.32s;
+    animation-duration: 20.57s;
+  }
+span:nth-child(53) {
+    top: 43vh;
+    right: 0;
+    left: initial;
+    animation-delay: 5.48s;
+    animation-duration: 18.67s;
+  }
+span:nth-child(54) {
+    top: 59vh;
+    right: 0;
+    left: initial;
+    animation-delay: 9.22s;
+    animation-duration: 22.21s;
+  }
+span:nth-child(55) {
+    top: 19vh;
+    right: 0;
+    left: initial;
+    animation-delay: 8.89s;
+    animation-duration: 17.97s;
+  }
+span:nth-child(56) {
+    top: 92vh;
+    right: 0;
+    left: initial;
+    animation-delay: 6.28s;
+    animation-duration: 19.21s;
+  }
+span:nth-child(57) {
+    top: 46vh;
+    right: 0;
+    left: initial;
+    animation-delay: 5.85s;
+    animation-duration: 23.23s;
+  }
+span:nth-child(58) {
+    top: 59vh;
+    right: 0;
+    left: initial;
+    animation-delay: 8.5s;
+    animation-duration: 28.57s;
+  }
+span:nth-child(59) {
+    top: 43vh;
+    right: 0;
+    left: initial;
+    animation-delay: 1.6s;
+    animation-duration: 24.54s;
+  }
+span:nth-child(60) {
+    top: 26vh;
+    right: 0;
+    left: initial;
+    animation-delay: 4.57s;
+    animation-duration: 26.12s;
+  }
+span:nth-child(61) {
+    top: 61vh;
+    right: 0;
+    left: initial;
+    animation-delay: 5.26s;
+    animation-duration: 24.28s;
+  }
+span:nth-child(62) {
+    top: 9vh;
+    right: 0;
+    left: initial;
+    animation-delay: 8.71s;
+    animation-duration: 31.83s;
+  }
+span:nth-child(63) {
+    top: 61vh;
+    right: 0;
+    left: initial;
+    animation-delay: 2.49s;
+    animation-duration: 25.01s;
+  }
+span:nth-child(64) {
+    top: 86vh;
+    right: 0;
+    left: initial;
+    animation-delay: 1.12s;
+    animation-duration: 31.83s;
+  }
+span:nth-child(65) {
+    top: 27vh;
+    right: 0;
+    left: initial;
+    animation-delay: 8.37s;
+    animation-duration: 19.28s;
+  }
+span:nth-child(66) {
+    top: 53vh;
+    right: 0;
+    left: initial;
+    animation-delay: 4.28s;
+    animation-duration: 17.83s;
+  }
+span:nth-child(67) {
+    top: 70vh;
+    right: 0;
+    left: initial;
+    animation-delay: 4.74s;
+    animation-duration: 29.0s;
+  }
+span:nth-child(68) {
+    top: 23vh;
+    right: 0;
+    left: initial;
+    animation-delay: 4.07s;
+    animation-duration: 20.6s;
+  }
+span:nth-child(69) {
+    top: 10vh;
+    right: 0;
+    left: initial;
+    animation-delay: 2.31s;
+    animation-duration: 20.99s;
+  }
+span:nth-child(70) {
+    top: 82vh;
+    right: 0;
+    left: initial;
+    animation-delay: 7.41s;
+    animation-duration: 21.92s;
+  }
+span:nth-child(71) {
+    top: 8vh;
+    right: 0;
+    left: initial;
+    animation-delay: 4.12s;
+    animation-duration: 18.82s;
+  }
+span:nth-child(72) {
+    top: 94vh;
+    right: 0;
+    left: initial;
+    animation-delay: 9.89s;
+    animation-duration: 27.29s;
+  }
+span:nth-child(73) {
+    top: 75vh;
+    right: 0;
+    left: initial;
+    animation-delay: 0.7s;
+    animation-duration: 15.67s;
+  }
+span:nth-child(74) {
+    top: 69vh;
+    right: 0;
+    left: initial;
+    animation-delay: 9.58s;
+    animation-duration: 28.86s;
+  }
+span:nth-child(75) {
+    top: 5vh;
+    right: 0;
+    left: initial;
+    animation-delay: 7.99s;
+    animation-duration: 23.53s;
+  }
+span:nth-child(76) {
+    top: 60vh;
+    right: 0;
+    left: initial;
+    animation-delay: 1.73s;
+    animation-duration: 23.56s;
+  }
+span:nth-child(77) {
+    top: 95vh;
+    right: 0;
+    left: initial;
+    animation-delay: 0.99s;
+    animation-duration: 25.74s;
+  }
+span:nth-child(78) {
+    top: 30vh;
+    right: 0;
+    left: initial;
+    animation-delay: 6.81s;
+    animation-duration: 22.42s;
+  }
+span:nth-child(79) {
+    top: 36vh;
+    right: 0;
+    left: initial;
+    animation-delay: 9.29s;
+    animation-duration: 22.68s;
+  }
+span:nth-child(80) {
+    top: 75vh;
+    right: 0;
+    left: initial;
+    animation-delay: 6.78s;
+    animation-duration: 24.97s;
+  }
+span:nth-child(81) {
+    top: 78vh;
+    right: 0;
+    left: initial;
+    animation-delay: 2.59s;
+    animation-duration: 24.41s;
+  }
+span:nth-child(82) {
+    top: 33vh;
+    right: 0;
+    left: initial;
+    animation-delay: 6.66s;
+    animation-duration: 19.13s;
+  }
+span:nth-child(83) {
+    top: 75vh;
+    right: 0;
+    left: initial;
+    animation-delay: 5.02s;
+    animation-duration: 28.21s;
+  }
+span:nth-child(84) {
+    top: 80vh;
+    right: 0;
+    left: initial;
+    animation-delay: 3.64s;
+    animation-duration: 16.98s;
+  }
+span:nth-child(85) {
+    top: 6vh;
+    right: 0;
+    left: initial;
+    animation-delay: 4.17s;
+    animation-duration: 24.62s;
+  }
+span:nth-child(86) {
+    top: 23vh;
+    right: 0;
+    left: initial;
+    animation-delay: 4.9s;
+    animation-duration: 26.53s;
+  }
+span:nth-child(87) {
+    top: 96vh;
+    right: 0;
+    left: initial;
+    animation-delay: 9.7s;
+    animation-duration: 30.51s;
+  }
+span:nth-child(88) {
+    top: 14vh;
+    right: 0;
+    left: initial;
+    animation-delay: 5.97s;
+    animation-duration: 28.79s;
+  }
+span:nth-child(89) {
+    top: 60vh;
+    right: 0;
+    left: initial;
+    animation-delay: 6.09s;
+    animation-duration: 28.05s;
+  }
+span:nth-child(90) {
+    top: 52vh;
+    right: 0;
+    left: initial;
+    animation-delay: 3.19s;
+    animation-duration: 23.82s;
+  }
+span:nth-child(91) {
+    top: 21vh;
+    right: 0;
+    left: initial;
+    animation-delay: 3.94s;
+    animation-duration: 18.95s;
+  }
+span:nth-child(92) {
+    top: 87vh;
+    right: 0;
+    left: initial;
+    animation-delay: 7.13s;
+    animation-duration: 23.72s;
+  }
+span:nth-child(93) {
+    top: 70vh;
+    right: 0;
+    left: initial;
+    animation-delay: 1.72s;
+    animation-duration: 21.1s;
+  }
+span:nth-child(94) {
+    top: 18vh;
+    right: 0;
+    left: initial;
+    animation-delay: 0.3s;
+    animation-duration: 26.45s;
+  }
+span:nth-child(95) {
+    top: 16vh;
+    right: 0;
+    left: initial;
+    animation-delay: 3.59s;
+    animation-duration: 29.7s;
+  }
+span:nth-child(96) {
+    top: 87vh;
+    right: 0;
+    left: initial;
+    animation-delay: 8.56s;
+    animation-duration: 18.02s;
+  }
+span:nth-child(97) {
+    top: 8vh;
+    right: 0;
+    left: initial;
+    animation-delay: 0.55s;
+    animation-duration: 26.73s;
+  }
+span:nth-child(98) {
+    top: 18vh;
+    right: 0;
+    left: initial;
+    animation-delay: 0.25s;
+    animation-duration: 20.26s;
+  }
+span:nth-child(99) {
+    top: 90vh;
+    right: 0;
+    left: initial;
+    animation-delay: 8.52s;
+    animation-duration: 23.64s;
+  }
+span:nth-child(100) {
+    top: 5vh;
+    right: 0;
+    left: initial;
+    animation-delay: 0.87s;
+    animation-duration: 24.13s;
+  }

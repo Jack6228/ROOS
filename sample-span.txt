@@ -1,0 +1,7 @@
+span:nth-child(#span_num#) {
+    top: #top_num#vh;
+    right: 0;
+    left: initial;
+    animation-delay: #delay_num#s;
+    animation-duration: #duration_num#s;
+  }
